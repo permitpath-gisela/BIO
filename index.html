@@ -103,6 +103,16 @@
             background: rgba(202, 166, 121, 0.05);
         }
 
+        a.card.featured {
+            border: 1.5px solid #CAA679;
+            background: rgba(202, 166, 121, 0.05);
+        }
+
+        a.card.featured:hover {
+            border-color: #CAA679;
+            background: rgba(202, 166, 121, 0.1);
+        }
+
         .card-label {
             flex-shrink: 0;
             width: 120px;
@@ -378,13 +388,13 @@
         <div class="section-title">Connect</div>
 
         <!-- Add to Contacts (Featured) -->
-        <div class="card featured">
+        <a href="data:text/vcard;charset=utf-8,%0D%0ABEGIN%3AVCARD%0D%0AVERSION%3A3.0%0D%0AFN%3AGisela%20Batista%0D%0AN%3ABatista%3BGisela%0D%0AORG%3APermitPath%0D%0ATITLE%3AFounder%20%26%20CEO%0D%0AEMAIL%3Agisela%40permitpath.ie%0D%0AURL%3Awww.permitpath.ie%0D%0AURL%3Alinkedin.com%2Fcompany%2Fpermit-path%0D%0AEND%3AVCARD" download="Gisela_Batista_PermitPath.vcf" class="card featured" style="text-decoration: none; color: inherit; display: block;">
             <div class="card-label">SAVE</div>
-            <div class="card-content" onclick="downloadVCard()" style="cursor: pointer;">
+            <div class="card-content">
                 <strong>Add me to your contacts</strong>
                 <p>Download vCard</p>
             </div>
-        </div>
+        </a>
 
         <!-- Email Direct -->
         <div class="card">
@@ -525,28 +535,5 @@
             <p style="margin-top: 10px;">Your path to working in Ireland</p>
         </footer>
     </div>
-
-    <script>
-        function downloadVCard() {
-            const vcard = `BEGIN:VCARD
-VERSION:3.0
-FN:Gisela Batista
-N:Batista;Gisela;;;
-ORG:PermitPath
-TITLE:Founder & CEO - Employment Permit Specialist
-EMAIL:gisela@permitpath.ie
-URL:https://www.permitpath.ie
-TEL:+353 (Employment Permits)
-ADV:Employment permits · Critical Skills · General Employment · LMNT
-NOTE:PermitPath - Ireland's Employment Permit Experts. Specializing in CSEP, GEP, and Labour Market Needs Test management for recruitment agencies, SMEs, and international professionals.
-END:VCARD`;
-
-            const element = document.createElement('a');
-            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(vcard));
-            element.setAttribute('download', 'Gisela_Batista_PermitPath.vcf');
-            element.style.display = 'none';
-            document.body.appendChild(element);
-            element.click();
-            document.body.removeChild(element);
-        }
-    </script>
+</body>
+</html>
