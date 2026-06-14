@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gisela Batista | PermitPath — Ireland's Employment Permit Experts</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, -apple-system, BlinkMacSystemFont, 'Helvetica Neue', sans-serif;
+            line-height: 1.6;
+            color: #fff;
+            background: #26585E;
+            min-height: 100vh;
+            padding: 30px 1rem;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Header Section */
+        .header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .logo-container {
+            display: none;
+        }
+
+        .name {
+            font-size: 42px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: -1px;
+        }
+
+        .brand {
+            font-size: 12px;
+            color: #CAA679;
+            font-weight: 600;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        .value-prop {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .value-prop-box {
+            background: rgba(202, 166, 121, 0.08);
+            border-left: 3px solid #CAA679;
+            padding: 16px 20px;
+            border-radius: 2px;
+        }
+
+        .value-prop-title {
+            font-size: 13px;
+            color: #CAA679;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+
+        .value-prop-text {
+            font-size: 12px;
+            color: #ddd;
+            line-height: 1.7;
+        }
+
+        /* Card Section */
+        .card {
+            background: rgba(10, 20, 25, 0.6);
+            border: 1px solid rgba(202, 166, 121, 0.3);
+            border-radius: 4px;
+            padding: 0;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .card:hover {
+            border-color: #CAA679;
+            background: rgba(10, 20, 25, 0.9);
+        }
+
+        .card.featured {
+            border: 1.5px solid #CAA679;
+            background: rgba(202, 166, 121, 0.05);
+        }
+
+        .card-label {
+            flex-shrink: 0;
+            width: 120px;
+            padding: 16px;
+            color: #CAA679;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-align: left;
+            border-right: 1px solid rgba(202, 166, 121, 0.2);
+        }
+
+        .card-content {
+            flex-grow: 1;
+            padding: 16px 20px;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        .card-content p {
+            font-size: 11px;
+            color: #aaa;
+            margin-top: 3px;
+        }
+
+        .card-content a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .card-content a:hover {
+            color: #CAA679;
+        }
+
+        /* Section Title */
+        .section-title {
+            font-size: 13px;
+            color: #CAA679;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-top: 35px;
+            margin-bottom: 18px;
+            text-transform: uppercase;
+        }
+
+        /* Button Grid for Services */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .grid-item {
+            background: rgba(202, 166, 121, 0.15);
+            border: 1.5px solid #CAA679;
+            border-radius: 4px;
+            padding: 14px 12px;
+            text-align: center;
+            font-size: 11px;
+            color: #fff;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: default;
+            line-height: 1.5;
+            min-height: 70px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .grid-item:hover {
+            background: #CAA679;
+            color: #26585E;
+            border-color: #CAA679;
+            transform: translateY(-2px);
+        }
+
+        .grid-item strong {
+            display: block;
+            color: #CAA679;
+            margin-bottom: 4px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .grid-item:hover strong {
+            color: #26585E;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(202, 166, 121, 0.2);
+            text-align: center;
+            font-size: 10px;
+            color: #888;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        footer a {
+            color: #CAA679;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* Tablet Responsive */
+        @media (min-width: 768px) {
+            body {
+                padding: 40px 2rem;
+            }
+
+            .name {
+                font-size: 48px;
+            }
+
+            .logo-container {
+                gap: 16px;
+                padding: 25px;
+            }
+
+            .logo-p {
+                font-size: 64px;
+            }
+
+            .logo-text {
+                font-size: 32px;
+            }
+
+            .card-label {
+                width: 140px;
+                padding: 20px;
+                font-size: 11px;
+            }
+
+            .card-content {
+                padding: 20px 25px;
+                font-size: 15px;
+            }
+
+            .card-content p {
+                font-size: 12px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+                gap: 15px;
+            }
+
+            .grid-item {
+                padding: 16px;
+                font-size: 12px;
+                min-height: 80px;
+            }
+
+            .grid-item strong {
+                font-size: 13px;
+                margin-bottom: 6px;
+            }
+
+            .section-title {
+                margin-top: 45px;
+                margin-bottom: 25px;
+            }
+
+            .value-prop {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+        }
+
+        /* Mobile only adjustments */
+        @media (max-width: 480px) {
+            body {
+                padding: 20px 0.75rem;
+            }
+
+            .name {
+                font-size: 32px;
+                margin-bottom: 4px;
+            }
+
+            .brand {
+                font-size: 11px;
+                margin-bottom: 20px;
+            }
+
+            .logo-container {
+                gap: 10px;
+                margin-bottom: 15px;
+                padding: 15px;
+            }
+
+            .logo-p {
+                font-size: 44px;
+            }
+
+            .logo-text {
+                font-size: 22px;
+            }
+
+            .grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
+            }
+
+            .grid-item {
+                padding: 12px 10px;
+                font-size: 10px;
+                min-height: 65px;
+            }
+
+            .card {
+                margin-bottom: 10px;
+            }
+
+            .card-label {
+                width: 100px;
+                padding: 14px 12px;
+                font-size: 9px;
+            }
+
+            .card-content {
+                padding: 14px 16px;
+                font-size: 13px;
+            }
+
+            .section-title {
+                font-size: 12px;
+                margin-top: 28px;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1 class="name">Gisela Batista</h1>
+            <p class="brand">PermitPath · Employment Permits Ireland</p>
+
+            <!-- Strategic Value Props -->
+            <div class="value-prop">
+                <div class="value-prop-box">
+                    <div class="value-prop-title">For Agencies & SMEs</div>
+                    <div class="value-prop-text">Stop losing placements at the permit stage. I handle eligibility checks, EPOS submissions, and LMNT so you stay front-of-house and your placement fees are protected.</div>
+                </div>
+                <div class="value-prop-box">
+                    <div class="value-prop-title">For Professionals</div>
+                    <div class="value-prop-text">One contact for everything. Eligibility check, application prep, D Visa guidance, IRP support — I simplify the path from job offer to first day in Ireland.</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contacts Section -->
+        <div class="section-title">Connect</div>
+
+        <!-- Add to Contacts (Featured) -->
+        <div class="card featured">
+            <div class="card-label">SAVE</div>
+            <div class="card-content">
+                <strong>Add me to your contacts</strong>
+                <p>Download vCard</p>
+            </div>
+        </div>
+
+        <!-- Email Direct -->
+        <div class="card">
+            <div class="card-label">EMAIL</div>
+            <div class="card-content">
+                <a href="mailto:gisela@permitpath.ie">gisela@permitpath.ie</a>
+            </div>
+        </div>
+
+        <!-- Website -->
+        <div class="card">
+            <div class="card-label">WEBSITE</div>
+            <div class="card-content">
+                <a href="https://www.permitpath.ie" target="_blank">www.permitpath.ie</a>
+            </div>
+        </div>
+
+        <!-- LinkedIn -->
+        <div class="card">
+            <div class="card-label">LINKEDIN</div>
+            <div class="card-content">
+                <a href="https://www.linkedin.com/company/permit-path" target="_blank">PermitPath</a>
+            </div>
+        </div>
+
+        <!-- Instagram -->
+        <div class="card">
+            <div class="card-label">INSTAGRAM</div>
+            <div class="card-content">
+                <a href="https://www.instagram.com/permitpath.ie/" target="_blank">@permitpath.ie</a>
+            </div>
+        </div>
+
+        <!-- Book Consultation -->
+        <div class="card">
+            <div class="card-label">BOOKING</div>
+            <div class="card-content">
+                <a href="https://calendar.app.google/nVmfwbWG1ANBNXJE7" target="_blank">Schedule consultation</a>
+                <p>Mon–Fri, Dublin time</p>
+            </div>
+        </div>
+
+        <!-- Services for Professionals -->
+        <div class="section-title">For Professionals</div>
+        <div class="grid">
+            <div class="grid-item">
+                <strong>Employment Strategy</strong>
+                Career analysis
+            </div>
+            <div class="grid-item">
+                <strong>Eligibility Check</strong>
+                CSEP or GEP
+            </div>
+            <div class="grid-item">
+                <strong>Document Prep</strong>
+                Review & ready
+            </div>
+            <div class="grid-item">
+                <strong>EPOS Submit</strong>
+                Application & tracking
+            </div>
+            <div class="grid-item">
+                <strong>D Visa</strong>
+                Visa-required countries
+            </div>
+            <div class="grid-item">
+                <strong>IRP Support</strong>
+                On arrival in Ireland
+            </div>
+            <div class="grid-item">
+                <strong>Family</strong>
+                Reunification guidance
+            </div>
+            <div class="grid-item">
+                <strong>Appeals</strong>
+                28-day window
+            </div>
+            <div class="grid-item">
+                <strong>Status Updates</strong>
+                Every 10 days
+            </div>
+        </div>
+
+        <!-- Services for Agencies -->
+        <div class="section-title">For Agencies & SMEs</div>
+        <div class="grid">
+            <div class="grid-item">
+                <strong>Pre-Placement</strong>
+                Eligibility checks
+            </div>
+            <div class="grid-item">
+                <strong>Employer</strong>
+                Obligations & guidance
+            </div>
+            <div class="grid-item">
+                <strong>CSEP & GEP</strong>
+                Full management
+            </div>
+            <div class="grid-item">
+                <strong>LMNT</strong>
+                Planning & execution
+            </div>
+            <div class="grid-item">
+                <strong>Background</strong>
+                You stay front-of-house
+            </div>
+            <div class="grid-item">
+                <strong>Status Updates</strong>
+                For you & client
+            </div>
+            <div class="grid-item">
+                <strong>Visa Guidance</strong>
+                All nationalities
+            </div>
+            <div class="grid-item">
+                <strong>Refusal</strong>
+                Appeal support
+            </div>
+        </div>
+
+        <!-- Permits -->
+        <div class="section-title">Permits</div>
+        <div class="grid">
+            <div class="grid-item">
+                <strong>Critical Skills</strong>
+                CSEP · 5–7 weeks
+            </div>
+            <div class="grid-item">
+                <strong>General Permit</strong>
+                GEP · 8–11 weeks
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <footer>
+            <p>PermitPath — Ireland's Employment Permit Experts</p>
+            <p><a href="https://www.permitpath.ie">www.permitpath.ie</a> | <a href="mailto:gisela@permitpath.ie">gisela@permitpath.ie</a></p>
+            <p style="margin-top: 10px;">Your path to working in Ireland</p>
+        </footer>
+    </div>
+</body>
+</html>
