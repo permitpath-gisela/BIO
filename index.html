@@ -217,6 +217,14 @@
             text-decoration: underline;
         }
 
+        .card.featured .card-content {
+            cursor: pointer;
+        }
+
+        .card.featured .card-content:hover {
+            opacity: 0.8;
+        }
+
         /* Tablet Responsive */
         @media (min-width: 768px) {
             body {
@@ -372,7 +380,7 @@
         <!-- Add to Contacts (Featured) -->
         <div class="card featured">
             <div class="card-label">SAVE</div>
-            <div class="card-content">
+            <div class="card-content" onclick="downloadVCard()" style="cursor: pointer;">
                 <strong>Add me to your contacts</strong>
                 <p>Download vCard</p>
             </div>
@@ -517,5 +525,28 @@
             <p style="margin-top: 10px;">Your path to working in Ireland</p>
         </footer>
     </div>
-</body>
-</html>
+
+    <script>
+        function downloadVCard() {
+            const vcard = `BEGIN:VCARD
+VERSION:3.0
+FN:Gisela Batista
+N:Batista;Gisela;;;
+ORG:PermitPath
+TITLE:Founder & CEO - Employment Permit Specialist
+EMAIL:gisela@permitpath.ie
+URL:https://www.permitpath.ie
+TEL:+353 (Employment Permits)
+ADV:Employment permits · Critical Skills · General Employment · LMNT
+NOTE:PermitPath - Ireland's Employment Permit Experts. Specializing in CSEP, GEP, and Labour Market Needs Test management for recruitment agencies, SMEs, and international professionals.
+END:VCARD`;
+
+            const element = document.createElement('a');
+            element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(vcard));
+            element.setAttribute('download', 'Gisela_Batista_PermitPath.vcf');
+            element.style.display = 'none';
+            document.body.appendChild(element);
+            element.click();
+            document.body.removeChild(element);
+        }
+    </script>
